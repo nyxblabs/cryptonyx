@@ -1,0 +1,57 @@
+{
+  "name": "cryptonyx",
+  "version": "0.0.1",
+  "description": "🔒 Unified API for cryptographic operations in web and runtime environments, supporting Node.js, browsers, and other platforms",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "license": "MIT",
+  "homepage": "https://💻nyxb.ws",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyxblabs/cryptonyx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nyxblabs/cryptonyx/issues"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/crypto.node.cjs",
+  "module": "./dist/crypto.web.mjs",
+  "browser": "./dist/crypto.web.mjs",
+  "types": "./dist/crypto.web.d.ts",
+  "exports": {
+    ".": {
+      "node": {
+        "require": "./dist/crypto.node.cjs",
+        "import": "./dist/crypto.node.mjs",
+        "types": "./dist/crypto.node.d.ts"
+      },
+      "require": "./dist/crypto.web.cjs",
+      "import": "./dist/crypto.web.mjs",
+      "types": "./dist/crypto.web.d.ts"
+    }
+  },
+  "scripts": {
+    "prepack": "nyxr build",
+    "build": "buildkarium",
+    "dev": "vitest dev",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs .",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix",
+    "release": "nyxr test && nyxlx changelogen@latest --release && pnpm publish && git push --follow-tags",
+    "test": "nyxr lint && vitest run --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nyxb/eslint-config": "0.0.53",
+    "buildkarium": "0.0.2",
+    "@types/node": "^18.15.11",
+    "@vitest/coverage-c8": "^0.30.1",
+    "eslint": "^8.40.0",
+    "typescript": "^4.9.5",
+    "vitest": "^0.30.1"
+  },
+  "packageManager": "pnpm@8.5.1",
+  "files": [
+    "dist"
+  ],
+  "keywords": []
+}
