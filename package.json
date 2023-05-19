@@ -1,6 +1,6 @@
 {
   "name": "cryptonyx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🔒 Unified API for cryptographic operations in web and runtime environments, supporting Node.js, browsers, and other platforms",
   "author": "Dennis Ollhoff <contact@nyxb.xyz>",
   "license": "MIT",
